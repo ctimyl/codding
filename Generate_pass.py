@@ -21,7 +21,7 @@ symbols_pw = input('Включать ли спецсимволы? (y/n) ')
 if symbols_pw == 'y':
     chars += [i for i in punctuation]
 double_pw = input('Исключать ли неоднозначные символы il1Lo0O? (y/n) ')
-if double_pw == 'n':
+if double_pw == 'y':
     if "i" in chars:
         chars.remove("i")
     elif "l" in chars:
@@ -40,7 +40,7 @@ if double_pw == 'n':
 def generate_password(length, chars):
     password = []
     for i in range(length):
-        password += chars[randrange(0, len(chars))]
+        password += choice(chars)
     return "".join(password)
 
 
